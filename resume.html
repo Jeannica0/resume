@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --accent: #2563eb; 
+      --border: #e5e7eb;
+      --skill-bg: #eef2ff; 
+      --section-title: #1e3a8a; 
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin: 0;
+      color: var(--accent);
+    }
+
+    .title {
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .contact {
+      text-align: right;
+      display: grid;
+      gap: 4px;
+      font-size: 0.95rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact a:hover { text-decoration: underline; }
+
+    .print-btn {
+      margin-top: 14px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    section { margin-top: 28px; }
+
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--section-title);
+      margin-bottom: 10px;
+      border-left: 4px solid var(--accent);
+      padding-left: 8px;
+    }
+
+    p { margin: 0.25rem 0; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .skill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.9rem;
+      background: var(--skill-bg);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .item { margin-top: 14px; }
+
+    .item h3 {
+      font-size: 1.05rem;
+      margin: 0;
+      color: var(--accent);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 2px;
+    }
+
+    ul.compact { margin: 8px 0 0 1rem; }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .contact { text-align: left; }
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .container { box-shadow: none; border-radius: 0; border: none; }
+      .print-btn { display: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div style="display: flex; align-items: center; gap: 16px;">
+    <img src="nicakes.jpg" alt="Jane Doe profile picture" 
+         style="width:100px; height:100px; border-radius:50%; object-fit: cover; border: 3px solid var(--accent);" />
+    <div>
+      <div>
+        <h1>Jean Nica J. Tanudtanud</h1>
+        <div class="title">BSIT Student • Ilocos Sur, Philippines</div>
+      </div>
+      <div class="contact" aria-label="Contact details">
+        <div><a href="mailto:jayca2817@gmail.com">jayca2817@gmail.com</a></div>
+        <div><a href="tel:+63 9946457512">+63 9946457512</a></div>
+        <div><a href="https://github.com/Jeannica0">github.com/Jeannica0</a></div>
+      </div>
+    </header>
+
+    <section aria-labelledby="summary-title">
+      <div id="summary-title" class="section-title">About Me</div>
+      <p>I am a 22 Year Old BSIT Student living in Sta. Cruz, Ilocos Sur. Before shifting to BSIT I was once a Art Student in UNP, I think art is for me because I am able to design our websites.</p>
+    </section>
+
+    <section aria-labelledby="skills-title">
+      <div id="skills-title" class="section-title">Skills</div>
+      <div class="skills" role="list">
+        <span class="skill" role="listitem">HTML</span>
+        <span class="skill" role="listitem">CSS</span>
+        <span class="skill" role="listitem">PHP</span>
+        <span class="skill" role="listitem">Bootstrap</span>
+        <span class="skill" role="listitem">Responsive Design</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-title">
+      <div id="education-title" class="section-title">Education</div>
+      <div class="item">
+        <h3>Bachelor of Science in Information Technology — ISPSC</h3>
+        <div class="meta">2023 – 202- · Tagudin, Ilocos Sur, Philippines</div>
+        <p>Relevant coursework: Web Development, Database Systems, Human-Computer Interaction</p>
+      </div>
+    </section>
+
+        <section aria-labelledby="Hobbies-title">
+      <div id="skills-title" class="section-title">Hobbies</div>
+      <div class="skills" role="list">
+        <span class="skill" role="listitem">Reading</span>
+        <span class="skill" role="listitem">Playing</span>
+        <span class="skill" role="listitem">Watching</span>
+      </div>
+    </section>
+
+
+  </div>
+</body>
+</html>
